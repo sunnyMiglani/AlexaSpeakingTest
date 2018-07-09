@@ -46,7 +46,7 @@ var handlers = {
 
   'AMAZON.HelpIntent': function () {
     this.response.speak("Hello! Welcome to Big Historian <break time = '0.3s' />  I've been created to help understand what is the best method of communication <break time = '0.3s' />  <break time = '0.3s' /> \
-     You can say <break time = '0.3s' />   Alexa ask Big Historian to tell me loads <break time = '0.3s' />  <break time = '0.3s' />  Or Alexa ask big historian to tell me something small <break time = '0.3s' />  <break time = '0.3s' /> ");
+     You can say <break time = '0.3s' />   Alexa ask Big Historian to tell me loads <break time = '0.3s' />  <break time = '0.3s' />  Or Alexa ask big historian to tell me something small <break time = '0.3s' />  <break time = '0.3s' />. If you have problems with using me, say Alexa ask big historian to reset my history  <break time = '0.3s' /> ");
     this.emit(':responseReady');
   },
 
