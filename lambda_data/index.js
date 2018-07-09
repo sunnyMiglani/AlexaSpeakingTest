@@ -69,17 +69,27 @@ var handlers = {
     console.log(this.attributes.index);
     
 
-    if(this.attributes.isInit == null || this.attributes.isInit === false){
-      this.attributes.isInit = true;
-      this.attributes.index = 0;
-    }
-    else if(this.attributes.isInit === true){
-      this.attributes.index +=1;
+    // if(this.attributes.isInit == null || this.attributes.isInit === false){
+    //   this.attributes.isInit = true;
+    //   this.attributes.index = 0;
+    // // }
+    // if(firstTime == true){
+    //   startValue = 0;
+    //   firstTime = false;
+    // }
+    // if(firstTime == false){
+    //   startValue +=1;
+    //   if(startValue > 3){
+    //     startValue = 0;
+    //   }
+    // }
+    // if(this.attributes.isInit === true){
+    //   this.attributes.index +=1;
       
-      if(this.attributes.index > 3){
-        this.attributes.index = 0;
-      }
-    }
+    //   if(this.attributes.index > 3){
+    //     this.attributes.index = 0;
+    //   }
+    // }
     
     const shortIntentSpeechA = "There were approximately 45 million Protestants and 22 million Catholic Christians in Germany in 1933 <break time = '0.3s' /> Hitler saw Christianity as a threat and a potential source of opposition to Nazism because it emphasised peace <break time = '0.3s' /> The Nazis tried to control the Churches with policies and bargaining <break time = '0.3s' /> \
     A state Reich Church under the leadership of the Nazi Bishop Ludwig Müller was established to unify the different branches of Protestantism <break time = '0.3s' /> "
@@ -90,45 +100,40 @@ var handlers = {
     const shortIntentSpeechC = "Hitler didn’t keep his side of the bargain <break time = '0.15s' /> however <break time = '0.15s' /> as the Nazis attempted to infiltrate the Church and spread their propaganda <break time = '0.3s' /> \
     The Reich Church attempted to ban the use of the Old Testament in religious services as it was considered a ‘Jewish book’ <break time='0.3s' /> "
     
-    const shortIntentSpeechD = "Eight hundred Pastors of the Confessional Church <break time = '0.15s' /> a non - conforming Protestant group <break time = '0.15s' /> were arrested and sent to concentration camps <break time = '0.3s' /> \
+    const shortIntentSpeechD = "Eight hundred Pastors of the Confessional Church <break time = '0.15s' /> a non conforming Protestant group <break time = '0.15s' /> were arrested and sent to concentration camps <break time = '0.3s' /> \
     The Nazis attempted to stop Catholics using the crucifix in church <break time = '0.15s' /> though this attempt was not successful <break time = '0.3s' /> Catholic schools and youth organisations were supressed <break time = '0.15s' />  with German children being educated in state schools and taught a Nazi curriculum <break time = '0.15s' /> as well as being expected to join the various branches of the Hitler Youth <break time = '0.3s' /> "
     
     
     var speakingString = "Problem occured!";
-    console.log(this.attributes.index);
+    // console.log(this.attributes.index);
+    console.log(startValue);
     
-    if(this.attributes.index === 0){
+    if(startValue === 0){
       
       var shortIntentFirstSpeech = "I am going to break down the paragraph <break time = '0.15s' /> and only continue once you're ready <break time = '0.3s' /> Here I go!" + ssmlMediumBreak + shortIntentSpeechA + ssmlMediumBreak + "If you would like to hear more, say Alexa, ask\
       big historian for the next part";
       speakingString = shortIntentSpeechA;
-
-      this.attributes.index +=1;
-      
-      
-      this.response.shouldEndSession = false;
-      console.log(this.attributes.index);
+      startValue +=1;      
       this.response.speak(shortIntentFirstSpeech);
       this.emit(":responseReady");
       return;
     }
-    else if(this.attributes.index == 1){
-      this.attributes.index += 1;
+    else if(startValue === 1){
+      startValue += 1;
       speakingString = shortIntentSpeechB;
     }
-    else if(this.attributes.index == 2){
-      this.attributes.index += 1;
+    else if(startValue === 2){
+      startValue += 1;
       speakingString = shortIntentSpeechC;
     }
-    else if (this.attributes.index == 3) {
-      this.attributes.index += 1;
+    else if (startValue === 3) {
+      startValue += 1;
       speakingString = shortIntentSpeechD;
     }
 
+    console.log(startValue);
     var shortIntentSpeech = ssmlMediumBreak + speakingString + ssmlMediumBreak + "If you would like to hear more , say Alexa, ask big historian for the next part";
 
-
-    this.response.shouldEndSession = false;
     this.response.speak(shortIntentSpeech);
     this.emit(':responseReady');
 
