@@ -64,9 +64,11 @@ var handlers = {
 
   'ShortIntent': function(){
 
+    this.response.shouldEndSession = false;
     console.log(this.attributes.isInit);
     console.log(this.attributes.index);
     
+
     if(this.attributes.isInit == null || this.attributes.isInit === false){
       this.attributes.isInit = true;
       this.attributes.index = 0;
@@ -74,7 +76,7 @@ var handlers = {
     else if(this.attributes.isInit === true){
       this.attributes.index +=1;
       
-      if(this.attributes.index > 4){
+      if(this.attributes.index > 3){
         this.attributes.index = 0;
       }
     }
@@ -102,9 +104,9 @@ var handlers = {
       speakingString = shortIntentSpeechA;
 
       this.attributes.index +=1;
-
+      
+      
       this.response.shouldEndSession = false;
-            
       console.log(this.attributes.index);
       this.response.speak(shortIntentFirstSpeech);
       this.emit(":responseReady");
@@ -112,18 +114,13 @@ var handlers = {
     }
     else if(this.attributes.index == 1){
       this.attributes.index += 1;
-      speakingString = shortIntentSpeechA;
+      speakingString = shortIntentSpeechB;
     }
     else if(this.attributes.index == 2){
       this.attributes.index += 1;
-      speakingString = shortIntentSpeechB;
-    }
-    else if (this.attributes.index == 3) {
-      this.attributes.index += 1;
       speakingString = shortIntentSpeechC;
     }
-
-    else if (this.attributes.index == 4) {
+    else if (this.attributes.index == 3) {
       this.attributes.index += 1;
       speakingString = shortIntentSpeechD;
     }
