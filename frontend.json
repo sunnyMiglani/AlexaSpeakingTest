@@ -1,0 +1,111 @@
+{
+    "interactionModel": {
+        "languageModel": {
+            "invocationName": "big historian",
+            "intents": [
+                {
+                    "name": "AMAZON.CancelIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.HelpIntent",
+                    "samples": [
+                        "what do i do",
+                        "help me",
+                        "help"
+                    ]
+                },
+                {
+                    "name": "AMAZON.StopIntent",
+                    "samples": []
+                },
+                {
+                    "name": "HelloIntent",
+                    "slots": [],
+                    "samples": [
+                        "hey",
+                        "hi",
+                        "hello"
+                    ]
+                },
+                {
+                    "name": "VerboseIntent",
+                    "slots": [],
+                    "samples": [
+                        "tell me a big explanation",
+                        "tell me a lot of things",
+                        "tell me something long",
+                        "tell me loads",
+                        "tell me a lot"
+                    ]
+                },
+                {
+                    "name": "ShortIntent",
+                    "slots": [],
+                    "samples": [
+                        "less",
+                        "small",
+                        "little",
+                        "next",
+                        "next one",
+                        "tell me the next one",
+                        "tell me something little",
+                        "tell me something small",
+                        "tell me less",
+                        "tell me small things",
+                        "tell me something short",
+                        "tell me a little"
+                    ]
+                },
+                {
+                    "name": "ResetValuesIntent",
+                    "slots": [],
+                    "samples": [
+                        "restart ",
+                        "start again",
+                        "reset ",
+                        "reset my history"
+                    ]
+                }
+            ],
+            "types": [
+                {
+                    "name": "yesNoType",
+                    "values": [
+                        {
+                            "name": {
+                                "value": "repeat",
+                                "synonyms": [
+                                    "repeat again",
+                                    "again",
+                                    "repeat"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "yes",
+                                "synonyms": [
+                                    "yep",
+                                    "yeah",
+                                    "I do",
+                                    "yes please"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "no",
+                                "synonyms": [
+                                    "nope",
+                                    "I do not",
+                                    "no thank you"
+                                ]
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    }
+}
