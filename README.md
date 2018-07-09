@@ -55,9 +55,12 @@ We also use the program **`replaceComma.py`** This program is to take a long tex
 
 ## Installation:
 To install the program, upload the frontend.json as the **Interaction Model** for the Alexa Developer skill.
-For the **AWS Lambda** we upload these files, and you can use the script `submit.sh` that will zip all the relavant files and upload them
+For the **AWS Lambda** we upload these files, and you can use the script `publish.sh` that will zip all the relavant files and upload them
+
+**Publish.sh**: in `publish.sh` you might need to change the name of the function name `explanationTests` to the matching function name from AWS Lambda
 
 **DO NOT FORGET**: Do not forget to do npm install in the project to have the relevant node_modules that are needed for this project.
+
 
 
 # About:
