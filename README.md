@@ -50,6 +50,7 @@ The program uses variables inside the code to keep track of which sentence shoul
 2. **VerboseIntent** : This allows for the longer paragraph in the program to run, and does not have any logic in it.
 3. **ResetValuesIntent**: This allows for the program to reset the logic values for `ShortIntent`.
 4. **NextIntent**: Frontend doesn't implement this yet, but this is an example of how to make one intent call another.
+5. **HelloIntent**: Quick intent for testing, an example of the `.listen()` is added to allow testing for constant alexa conversation for this app.
 
 We also use the program **`replaceComma.py`** This program is to take a long text, and add pauses and breaks to make it more speech friendly. These timings on it are based on testing and some talk with the Co-Design partners at BIG.
 
@@ -66,6 +67,17 @@ For the **AWS Lambda** we upload these files, and you can use the script `publis
 # About:
 
 This is part of a Co-design system for the University of Bristol's Bristol Interaction Group focused on HCI research
+
+### Observations:
+
+This part is to be filled once the experiment has been completed.
+
+But an observation made during the production of this system is that 
+**Users having to say `Alexa Ask Big Historian ...` is quite verbose, and this can cause interruptions while using the program. However this idea of using `Alexa` to trigger the device and `Big Historian` to specify the app is needed
+by users to allow them to talk to each other during a group activity.**
+
+**For a single user, the implementation could be changed to use a `.listen("...")` at the end of each `.speak("...")` to trigger Alexa to keep the conversation going, however as we're unsure whether this will be a group experiment or 
+a solo experiment, the `.listen()` has been ommited except for the example in the `HelloIntent` invocation. This can be raised by saying "Alexa ask big historian hello" .**
 
 
 # Support: 
