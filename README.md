@@ -3,6 +3,11 @@
 Alexa Speaking Test repository. To see how the information needs to be structured for users to understand the information only via voice
 
 
+### AlexaSpeechHelper:
+
+This is a python program developed to make Alexa speak more clearly by replacing common grammar with
+ssml based pauses and breaks, allowing for a more understandable speech system
+
 # Program Flow:
 
 The program uses the normal flow of any Alexa based JS Skill
